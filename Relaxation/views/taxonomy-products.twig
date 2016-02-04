@@ -1,0 +1,34 @@
+{% extends "layout.twig" %}
+{% set preFooter = true %}
+
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="row content--landing-white">
+            <h1 class="text-center page-header">{{ 'product.title.content'|trans }}</h1>
+            {% for product in products %}
+                <div class="col-md-6">
+                    <div class="product">
+                        <div class="row">
+                            <div class="col-md-6 padd-left-none">
+                                <div class="align-content product-img">
+                                    <img src="{{ product.thumbnail.src }}" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="col-md-6 content-solo-product">
+                                <div class="align-content">
+                                    <h3>{{ product.post_title }}</h3>
+                                    <p class="descript--product">{{ product.post_content | truncate(60, true) }}</p>
+                                </div>
+                                <div class="align-content">
+                                    <a href="{{ function('home_url','tarif')}}" class="btn btn-danger text-uppercase">{{ 'product.btn.content'|trans }}</a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>    
+{% endblock %}

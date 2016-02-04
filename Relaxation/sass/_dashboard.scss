@@ -1,0 +1,33 @@
+.dashboard-sidebar{
+    .creadits{
+        border: 1px solid #c6c6c7;
+        background: #fff;
+        padding: 10px 10px;
+        margin-bottom: 20px;
+        span{
+            font-size: 20px;
+        }
+        .orange-text{
+            color: #f33d13;
+        }
+    }
+    .bluebx {
+        background-color: $brand-color;
+        color: $bg1;
+        padding: 10px;
+        font-size: 19px;
+    }
+}
+.personalbx{
+    padding-left: 10px;
+    padding-right: 10px;
+    img{
+        margin-bottom: 10px;
+    }
+    b{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,63 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="content--landing-white">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>{{ 'dashboard.heading'|trans }}</h1>
+            <hr />
+        </div>
+        <div class="col-xs-12 col-sm-3 col-sm-push-9">
+            <h3>{{ 'dashboard.available_credits'|trans }}</h3>
+            <hr />
+            <h1 class="text-center available_credits">{{ user_history.available_credits }}</h1>
+            <br />
+            <h3>{{ 'dashboard.lesson_categories'|trans }}</h3>
+            <hr />
+            <ul>
+                {% for category in categories %}
+                <li>
+                    <a href="{{ category_url ~ category.slug }}">
+                    {{ category.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-sm-pull-3">
+            {% for category in categories if category.slug == current_category %}
+            <h3>{{ category.name }}</h3>
+            <hr />
+            {% set category_lessons = attribute(lessons, category.slug) %}
+            {% set closed = true %}
+            {% for post in category_lessons %}
+            {% if loop.index == 1 %}
+            {% set closed = false %}
+            <div class="row">
+                {% endif %}
+                <div class="col-xs-12 col-sm-4">
+                    <img class="img-responsive" src="{{ post.post_thumbnail }}"/>
+                    <h4>{{ post.title }}</h4>
+                    <small>{{ post.description }}</small>
+                    {% set link = post.file ~ ':-:' ~ function( 'get_current_user_id' ) ~ ':-:' ~ post.credits %}
+                    {% set data = function( 'crypt_set_data', link ) %}
+                    <br />
+                    <hr />
+                    <span class="download_lesson btn-anim1 btn--category-full" data-lesson="{{ function( 'encrypt' ) }}">
+                    Download
+                    </span>
+                    <span class="pull-right">{{ post.credits }} Credits</span>
+                </div>
+                {% if loop.index is divisible by(3) %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+            {% if closed == false %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

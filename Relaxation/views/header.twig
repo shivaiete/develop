@@ -1,0 +1,22 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar text-center" role="navigation">
+            <ul class="nav navbar-nav pull-left text-uppercase">
+                {% for item in menu_header.get_items %}
+                {% if loop.length is even and (loop.index0 == loop.length / 2) %}
+            </ul>
+            <a class="brand" href="/">
+                <img class="img-responsive" src="{{ function('get_content_tree','logo_website_content') }}">
+            </a>
+            <ul class="nav navbar-nav pull-right text-uppercase">
+                {% elseif loop.length is odd and loop.index0 == loop.length // 2 + 1 %}
+                <li class="{{item.classes | join(' ')}}"><a href="/"><img class="img-responsive" src="{{ function('get_content_tree','logo_website_content') }}"></a></li>
+                {% endif %}
+                <li class="{{item.classes | join(' ')}}"> <a href="{{item.get_link}}">{{item.title}}</a></li>
+                {% endfor %}
+                <li><a href="{{ function('home_url','my-account') }}"><img
+                    src="{{ function('get_content_tree','logo_padlock') }}"> {{ 'header.account.link'|trans }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

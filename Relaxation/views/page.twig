@@ -1,0 +1,12 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="row">
+    {% for post in posts %}
+        <div class="col-md-12">
+            <h1>{{ post.name }}</h1>
+            <p>{{ post.post_content }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

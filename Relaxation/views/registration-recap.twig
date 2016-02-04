@@ -1,0 +1,83 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">{{ 'recap.step.content'|trans }}</h1>
+        </div>
+        <div class="steps-icon-cont row text-uppercase text-center">
+        <div class="col-md-3">
+            <div class="steps step-1 selected1">
+                <span class="icon"></span>
+                <span class="number"></span>
+                <span class="arrow"></span>
+                <span>{{ 'registration.step.content'|trans }}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="steps step-2 selected2">
+                <span class="icon"></span>
+                <span class="number"></span>
+                <span class="arrow"></span>
+                <span>{{ 'recap.step.content'|trans }}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="steps step-3">
+                <span class="icon"></span>
+                <span class="number"></span>
+                <span class="arrow"></span>
+                <span>{{ 'payment.step.content'|trans }}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="steps step-4">
+                <span class="icon"></span>
+                <span class="number"></span>
+                <span>{{ 'confirmation.step.content'|trans }}</span>
+            </div>
+        </div>
+        </div>
+        <form id="recapForm">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <h4>{{ 'recap.title.content'|trans }}</h4>
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.surname'|trans }}</label>
+                        <div class="firstnameRecap form-verify form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.firstname'|trans }}</label>
+                        <div class="lastnameRecap form-verify form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.email'|trans }}</label>
+                        <div class="mailRecap form-verify form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" required> {{ 'form.checkbox.text1'|trans }} <a href="{{ function('home_url','cgv')}}">{{ 'form.checkbox.text2'|trans }}</a>
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">{{ function('get_option_tree', 'recappage_text') }}</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">{{ 'form.btn.validate'|trans }}</button>
+                        <button type="submit" class="btn btn-danger"> {{ 'form.btn.back'|trans }} </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var ajax_url     = "{{ function('admin_url','admin-ajax.php') }}";
+        var payment_page = "{{ function('home_url','payment') }}";
+        getElementCustomer();
+    </script>
+{% endblock javascript %}

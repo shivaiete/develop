@@ -1,0 +1,76 @@
+#contact, #login, #payment, #registration, #password {
+    > .container > .row .heading {
+        font-family: $font-family1;
+        color: $brand-color;
+    }
+    form {
+        padding-bottom: 2rem;
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]
+        {
+            border-left: 0.3rem solid $brand-color;
+            width: 85%;
+            display: inline-block;
+        }
+        .fa {
+            color: $brand-color;
+            background: $bg3;
+            padding: 0.3rem 0 0.6rem;
+            //padding-bottom: 0.4rem;
+            width: 8%;
+            text-align: center;
+            position: relative;
+            left: -0.5rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+        .btn {
+            margin: 2rem 0;
+        }
+    }
+}
+.page-header{
+    margin-top:0;
+    border-bottom: none;
+    h1{
+        color: $text-color2;
+        font-family: $font-family2;
+    }
+    p{
+        padding: 0 20%;
+    }
+}
+.text-default{
+    color: $text-color2;
+    font-weight: 400;
+}
+
+.form-control{
+    background: -webkit-linear-gradient(#fefefe, #f9f9f9);
+    background: linear-gradient(#fefefe, #f9f9f9);
+    box-shadow: none;
+    padding-top: 2.1rem;
+    padding-bottom: 2.1rem;
+}
+.form-verify{
+    padding-top:10px;
+    padding-bottom:10px;
+    overflow: hidden;
+    height: 45px;
+}
+.sub-heading{
+    font-size: 22px;
+    color: $text-color2;
+    font-weight: 400;
+}
+.topsapce{
+    padding-top: 5px;
+}
+.forgot-password{
+    color: $text-color2;
+    font-size: 17px;
+}
+.loginbtn{
+    margin-top: 20px;
+}

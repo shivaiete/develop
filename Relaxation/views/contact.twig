@@ -1,0 +1,58 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">{{ 'contact.title1.content'|trans }}</h1>
+        </div>
+        <form class="" action="" method="POST" role="form">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-4">
+                    <h4 class="sub-heading">{{ 'contact.title2.content'|trans }}</h4>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert" style="display:none;"><b>{{ 'contact.error.content'|trans }}</b></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.surname'|trans }}</label>
+                        <input type="text"  name="surname" class="form-control" id="" required placeholder="{{ 'form.label.surname'|trans }}">
+                    </div>
+                 <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.firstname'|trans }}</label>
+                        <input type="text" name="firstname" class="form-control" id="" required placeholder="{{ 'form.label.firstname'|trans }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.email'|trans }}</label>
+                        <input type="email" name="email" class="form-control" id="" required placeholder="{{ 'form.label.email'|trans }}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">{{ 'contact.btn.content'|trans }}</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="sub-heading">{{ 'contact.title3.content'|trans }}</h4>
+                    <div class="form-group">
+                        <label for="" class="text-default topsapce">{{ 'contact.label.subject'|trans }}</label>
+                        <input type="text" class="form-control" id="" required placeholder="{{ 'contact.label.subject'|trans }}">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="" id="input" class="form-control" rows="5" required></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+    {{ parent() }} 
+<script type="text/javascript">
+        $(document).on('submit','.form-contact',function(event){
+            event.preventDefault();
+            $('.alert-danger').css('display','block');
+        });
+    </script> 
+{% endblock javascript %} 

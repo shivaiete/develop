@@ -1,0 +1,61 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">{{ 'login.title.content'|trans }}</h1>
+        </div>
+        <form class="form-contact" method="post">
+            <input type="hidden" name="nonce" value="{{ nonce }}" />
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <h4>{{ 'login.title2.content'|trans }}</h4>
+                    {% if login_error is not empty %}
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert">{{ login_error }}</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="" class="text-default">Email</label>
+                        <input type="text" name="username" class="form-control" id="" required
+                    placeholder="{{ 'login.label.login'|trans }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="text-default">Password</label>
+                        <input type="password"  name="password" class="form-control" id="" required placeholder="{{ 'login.label.password'|trans }}">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 text-left">
+                        <div class="row">
+                            <label for="remember">
+                                <input type="checkbox" name="remember" id="remember" value="yes" /> {{ 'login.label.remember'|trans }}
+                            </label>
+                            <br />
+                            <a href="{{ login_link }}" class="forgot-password">
+                                <small>
+                                {{ 'form.btn.password_reset'|trans }}
+                                </small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger loginbtn">{{ 'form.btn.validate'|trans }}</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+    {#{{ parent() }}#}
+    {#<script type="text/javascript">#}
+        {#$(document).on('submit','.form-contact',function(event){#}
+            {#event.preventDefault();#}
+            {#$('.alert-danger').css('display','block');#}
+        {#});#}
+    {#</script>#}
+{% endblock javascript %}

@@ -1,0 +1,65 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="ptrn">
+    <div class="container">
+        <div class="row">
+            {% if function('get_content_tree','plan_radio') == 'false'  %}
+            {% for i in 1..4 %}
+            <div class="col-md-10 col-md-offset-1 price">
+                <div class="row">
+                    <h3>{{ function('get_content_tree','plan' ~ i ~ '_content_title') }}</h3>
+                </div>
+                <div class="row top-bott-space">
+                    <div class="col-md-2">
+                       <div class="price-bx text-center">
+                            <b>{{ function('get_content_tree','plan' ~ i ~ '_content_price_text') }}</b>
+                       </div>
+                    </div>
+                    <div class="col-md-7">
+                        <p>{{ function('get_content_tree','plan' ~ i ~ '_content_price_subtext') }}</p>
+                    </div>
+                    <div class="col-md-3 text-center btn-spacetop">
+                        <a href="#" class="btn btn-danger text-uppercase">{{ function('get_content_tree','plan' ~ i ~ '_content_btn') }}</a>
+                    </div>
+                    <li class="hidden price-sps">{{ function('get_content_tree','plan' ~ i ~ '_price_for_vad')}}
+                    </li>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            {% for i in 1..3 %}
+            <div class="col-md-10 col-md-offset-1 price">
+                <div class="row">
+                    <h3>{{ function('get_content_tree','plan' ~ i ~ '_content_title') }}</h3>
+                </div>
+                <div class="row top-bott-space">
+                    <div class="col-md-2">
+                       <div class="price-bx text-center">
+                            <b>{{ function('get_content_tree','plan' ~ i ~ '_content_price_text') }}</b>
+                       </div>
+                    </div>
+                    <div class="col-md-7">
+                        <p>{{ function('get_content_tree','plan' ~ i ~ '_content_price_subtext') }}</p>
+                    </div>
+                    <div class="col-md-3 text-center btn-spacetop">
+                        <a href="#" class="btn btn-danger text-uppercase">{{ function('get_content_tree','plan' ~ i ~ '_content_btn') }}</a>
+                    </div>
+                    <li class="hidden price-sps">{{ function('get_content_tree','plan' ~ i ~ '_price_for_vad')}}
+                    </li>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var ajax_url      = "{{ function('admin_url','admin-ajax.php') }}";
+        var register_page = "{{ function('home_url','registration') }}";
+    </script>
+{% endblock javascript %}

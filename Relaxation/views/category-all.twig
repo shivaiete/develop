@@ -1,0 +1,24 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+    {% for categorie in categories %}
+        <div class="row category-gap">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row category-box">
+                        <div class="col-md-4 padd-left-none">
+                            <img src="{{ function('get_wp_term_image', categorie.term_id ) }}" alt="" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="text-uppercase">{{ categorie.name | truncate(20, true) }}</h3>
+                            <p>{{ categorie.description | truncate(20, true) }}</p>
+                            <a href="{{ function('get_term_link', categorie.term_id, categorie.taxonomy )}}" class="btn btn-danger text-uppercase">{{ 'landing.btn.discover'|trans }}</a> 
+                        </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %} 

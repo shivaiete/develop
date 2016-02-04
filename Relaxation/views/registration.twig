@@ -1,0 +1,128 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">{{ 'form.title.registration'|trans }}</h1>
+        </div>
+        <div class="steps-icon-cont row text-uppercase text-center">
+            <div class="col-md-3">
+                <div class="steps step-1 selected1">
+                    <span class="icon"></span>
+                    <span class="number"></span>
+                    <span class="arrow"></span>
+                    <span>{{ 'registration.step.content'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="steps step-2">
+                    <span class="icon"></span>
+                    <span class="number"></span>
+                    <span class="arrow"></span>
+                    <span>{{ 'recap.step.content'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="steps step-3">
+                    <span class="icon"></span>
+                    <span class="number"></span>
+                    <span class="arrow"> </span>
+                    <span>{{ 'payment.step.content'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="steps step-4">
+                    <span class="icon"></span>
+                    <span class="number"> </span>
+                    <span>{{ 'confirmation.step.content'|trans }}</span>
+                </div>
+            </div>
+        </div>
+        <form id="registrationForm">
+            <div class="alert alert-danger" role="alert" style="display:none;">
+                <b>{{ 'registration.error.content'|trans }}</b>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <h4 class="sub-heading">{{ 'registration.title.content'|trans }}</h4>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{'form.label.surname'|trans}}</label>
+                        <input type="text" class="form-control" id="registration_firstname" name="firstname" required placeholder="{{ 'form.label.surname'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.firstname'|trans }}</label>
+                        <input type="text" class="form-control" id="registration_lastname" name="lastname" required placeholder="{{ 'form.label.firstname'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.email'|trans }}</label>
+                        <input type="email" class="form-control" id="registration_email" name="email" required placeholder="{{ 'form.label.email'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.extra.email_confirmation'|trans }}</label>
+                        <input type="email" class="form-control" id="" placeholder="Confirm Email">
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.extra.phone'|trans }}</label>
+                        <input type="text" class="form-control" id="registration_phone" name="phone" required placeholder="{{ 'form.extra.phone'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.extra.nationality'|trans }}</label>
+                        <input type="text" class="form-control" id="registration_nationality" name="natioality" required placeholder="{{ 'form.extra.nationality'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.extra.postcode'|trans }}</label>
+                        <input type="text" class="form-control" id="registration_postcode" name="postcode" required placeholder="{{ 'form.extra.postcode'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.extra.city'|trans }}</label>
+                        <input type="text" class="form-control" id="" placeholder="{{ 'form.extra.city'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.password'|trans }}</label>
+                        <input type="password" class="form-control" id="registration_pwd" name="password1" required placeholder="{{ 'form.label.password'|trans }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="text-default">{{ 'form.label.pwd_confirmation'|trans }}</label>
+                        <input type="password" class="form-control" id="confirmation_pwd" name="password2" required placeholder="{{ 'form.label.pwd_confirmation'|trans }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-muted">{{ function('get_option_tree', 'registration_text') }}</h5>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-offset-2 col-md-4">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">{{ 'form.btn.validate'|trans }}</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var ajax_url     = "{{ function('admin_url','admin-ajax.php') }}";
+        var recap_page   = "{{ function('home_url','recap') }}";
+    </script>
+{% endblock javascript %}

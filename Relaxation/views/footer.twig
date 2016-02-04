@@ -1,0 +1,12 @@
+<footer class="footer">
+    <div class="container">
+        <div class="text-center">
+            <div class="list">
+                {% for item in menu_footer.get_items %}
+                <a href="{{item.get_link}}">{{item.title}}</a>
+                {% endfor %}
+            </div>
+            <span class="copy text-muted">&#169; {{ "now"|date('Y' ) }} {{ function('bloginfo','name') }}</span>
+        </div>
+    </div>
+</footer>

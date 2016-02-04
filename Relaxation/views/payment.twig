@@ -1,0 +1,139 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="text-center">{{ 'payment.step.content'|trans }}</h1>
+        </div>
+        <div class="steps-icon-cont row text-uppercase text-center">
+            <div class="col-md-3">
+                <div class="steps step-1 selected1">
+                    <span class="icon"></span>
+                    <span class="number"></span>
+                    <span class="arrow"></span>
+                    <span>{{ 'registration.step.content'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="steps step-2 selected2">
+                    <span class="icon"></span>
+                    <span class="number"></span>
+                    <span class="arrow"></span>
+                    <span>{{ 'recap.step.content'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="steps step-3 selected3">
+                    <span class="icon"></span>
+                    <span class="number"></span>
+                    <span class="arrow"></span>
+                    <span>{{ 'payment.step.content'|trans }}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="steps step-4">
+                    <span class="icon"></span>
+                    <span class="number"></span>{{ 'confirmation.step.content'|trans }}
+                </div>
+            </div>
+        </div>
+        <form id="paymentForm">
+            <div class="form-group">
+                <div class="alert alert-danger" role="alert" style="display:none;">
+                    <b>{{ 'form.payment.error'|trans }}</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-6 payment-page">
+                    <h4 class="sub-heading">{{ 'form.payment.title1'|trans }}</h4>
+                    <div class="form-group">
+                        <h5 class="text-muted">{{ 'form.payment.title2'|trans }}: <span class="nameOffer"></h5>
+                    </div>
+                    <div class="form-group">
+                        <h5 class="text-muted">{{ 'form.payment.title3'|trans }}: <span class="price"></h5>
+                    </div>
+                    <div class="form-group">
+                        <h5 class="text-muted">{{ 'form.title.paiement'|trans }}</h5>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="radio" name="crd" class="" id="visa">
+                                <label for="visa"><img src="{{ theme.path }}/images/front/card1.jpg" alt="" /></label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="radio" name="crd" class="" id="visa2">
+                                <label for="visa2"><img src="{{ theme.path }}/images/front/card2.jpg" alt="" /></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="text-muted">{{ 'form.label.cardnumber'|trans }}: </label>
+                                <div class="row">
+                                    <div class="col-md-3 crdspace">
+                                        <input class="form-control" id="registration_cartnumber1" maxLength="4" type="text" required>
+                                    </div>
+                                    <div class="col-md-3 crdspace">
+                                        <input class="form-control" id="registration_cartnumber2" maxLength="4" type="text" required>
+                                    </div>
+                                    <div class="col-md-3 crdspace">
+                                        <input class="form-control" id="registration_cartnumber3" maxLength="4" type="text" required>
+                                    </div>
+                                    <div class="col-md-3 crdspace">
+                                        <input class="form-control" id="registration_cartnumber4" maxLength="4" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-muted">{{ 'form.label.security_code'|trans }}</label>
+                                <input class="form-control" id="registration_cvc" type="text" maxLength="3" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="text-muted">{{ 'form.label.end_validity_date'|trans }}:</label>
+                                <div class="row">
+                                    <div class="col-md-6 crdspace">
+                                        <select class="form-control" id="registration_card_date_month">
+                                            {% for i in  1..12 %}              
+                                            <option value="{{ "%02d"|format(i) }}">
+                                             {{ "%02d"|format(i) }}
+                                            </option>
+                                            {% endfor %}     
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 crdspace">
+                                        <select class="form-control" id="registration_card_date_year">
+                                            {% for i in "now"|date("Y").."now"|date("Y")+10 %}         
+                                            <option value="{{ i }}"> {{ i }} </option>
+                                            {% endfor %}     
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-muted">{{ 'form.label.cardholder'|trans }}:</label>
+                                <input type="" class="form-control" id="" required placeholder="{{ 'form.label.cardholder'|trans }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger btn__form">
+                        {{ 'form.btn.validate'|trans }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+{% block javascript %}
+    {{ parent() }} 
+<script type="text/javascript">
+        var ajax_url             = "{{ function('admin_url','admin-ajax.php') }}";
+        var confirmation_page_id = "{{ function('get_content_tree','payment_confirmation_page') }}";
+        var confirmation_page    = "{{ function('home_url','137') }}";
+        getElementPrice();
+    </script> 
+{% endblock javascript %}

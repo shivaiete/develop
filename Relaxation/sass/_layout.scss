@@ -1,0 +1,130 @@
+html, body {
+    background: $bg1;
+    font-family: $font-family2;
+}
+.ptrn{
+    background:url(../images/front/pattern.jpg) no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.blue-band{
+    background-color: $bg3;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    h2{
+        color: $bg1;
+        font-size: 45px;
+        font-weight: 300;
+        padding-bottom: 20px;
+    }
+    p{
+        color: $bg1;
+        padding: 0 20%;
+        line-height: 25px;
+    }
+}
+.footer-section{
+    border-top: 1px solid #f33d13;
+    img{
+        width: 100%;
+        height:auto;
+    }
+    h3{
+        font-size: 19px;
+        color: $text-color1;
+    }
+    p{
+        color: $text-color2;
+        font-size: 13px;
+        padding-top: 10px;
+    }
+}
+.footer-area{
+    padding: 30px 0;
+    h3{
+        color: $text-color1;
+        padding: 0 0 5px 0;
+        font-size: 34px;
+        font-weight: 300;
+        margin-top: 0;
+    }
+    p{
+        padding: 0 15%;
+        color: $text-color2;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+}
+.header, .footer {
+    background: $bg1;
+    a {
+        color: $link-color1;
+    }
+    .nav {
+        font-family: $font-family2;
+        font-size: 1rem;
+        a:hover, a:focus {
+            color: $brand-color;
+            background: none;
+        }
+    }
+}
+
+.header {
+    text-align: center;
+    .nav {
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 1.4rem;
+        padding-top: 2rem;
+        font-weight: 400;
+    }
+    .brand{
+        display: inline-block;
+        padding-top: 25px;
+        &:hover{
+            border-bottom: 0.2rem solid transparent;
+        }
+    }
+    a {
+        border-radius: 0 !important;
+        border-bottom: 0.2rem solid transparent;
+        margin: 0 2rem;
+        padding: 0;
+    }
+    a:hover {
+        color: $text-color1;
+        border-bottom: 0.2rem solid $button-color-warning;
+    }
+}
+
+.navbar-nav{
+    li{
+        padding:  0.4rem 2.6rem;
+        margin: 1rem 0;
+        a{
+            margin:0;
+            padding: 0;
+        }
+    }
+}
+.footer {
+    margin-top: 0rem;
+    padding: 3rem 0;
+}
+.footer a {
+    font-size: 1.3rem;
+    color: $link-color1;
+    padding: 0 1rem;
+}
+.footer{
+    .copy{
+        color: $link-color1;
+        font-size: 1.2rem;
+    }
+    .list{
+        margin-bottom: 10px;
+    }
+}

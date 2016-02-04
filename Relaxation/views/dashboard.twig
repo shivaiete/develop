@@ -1,0 +1,54 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="container-fludic ptrn">
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>{{ 'dashboard.heading'|trans }}</h1>
+            <p>{{ 'dashboard.heading2'|trans }} {{ 'dashboard.heading3'|trans }}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-9">
+                        {% for category in categories %}
+                        {% set category_lessons = attribute(lessons, category.slug) %}
+                        {% set closed = true %}
+                        {% for post in category_lessons %}
+                        {% if loop.index == 1 %}
+                        {% set closed = false %}
+                        <div class="row"> 
+                            {% endif %}
+                            <div class="col-md-3 text-center personalbx">
+                                <img class="img-responsive" src="{{ post.post_thumbnail }}"/>
+                                <b class="text-uppercase">{{ post.title }}</b>
+                                <p>{{ post.description }}</p>
+                                {% set link = post.file ~ ':-:' ~ function( 'get_current_user_id' ) ~ ':-:' ~ post.credits %}
+                                {% set data = function( 'crypt_set_data', link ) %} <br />
+                                <hr />
+                            </div>
+                            {% if loop.index is divisible by(4) %} 
+                        </div>
+                        <div class="row">
+                        {% endif %}
+                        {% endfor %}
+                        {% if closed == false %} 
+                        </div>
+                        {% endif %}
+                        {% endfor %} 
+                    </div>
+                    <div class="col-md-3 dashboard-sidebar">
+                        <div class="creadits text-center"> 
+                            <span class="orange-text">{{ 'dashboard.available_credits'|trans }}:</span>
+                        </div>
+                        <div class="bluebx text-center">
+                            <b class="text-uppercase">{{ 'dashboard.top_up'|trans }}<br>
+                            {{ 'dashboard.your_creadits'|trans }}
+                            </b> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

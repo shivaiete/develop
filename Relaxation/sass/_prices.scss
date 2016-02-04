@@ -1,0 +1,43 @@
+.price{
+    background-color: $bg1;
+    border: 1px solid #d4d4d4;
+    margin-bottom: 3.2rem;
+    .top-bott-space{
+        padding-bottom: 3.2rem;
+        padding-top: 3.2rem;
+    }
+    .btn-spacetop{
+        .btn{
+            white-space: normal;
+        }
+    }
+    h3{
+        color: $button-color-warning;
+        border-bottom: 1px solid #d4d4d4;
+        padding: 1.5rem 2rem;
+        margin: 0;
+        font-size: 19px;
+    }
+    p{
+        color: $text-color2;
+    }
+    .price-bx{
+        width: 105px;
+        height: 105px;
+        margin: 0 auto;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        background: #f33d13;
+        display: table;
+        b{
+            color: $bg1;
+            font-size: 3.6rem;
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    .btn-spacetop{
+        margin-top: 2.3rem;
+    }
+
+}

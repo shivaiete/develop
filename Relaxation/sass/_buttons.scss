@@ -1,0 +1,47 @@
+.btn {
+    font-family: $font-family2;
+    text-transform: uppercase;
+}
+.btn-primary {
+    border-radius: 0.3rem;
+    padding: 1.3rem 5rem;
+    border-color: darken($brand-color, 5%);
+    background-color: $brand-color;
+    font-weight: 700;
+    &:hover {
+        border-color: darken($brand-color, 5%);
+        background-color: darken($brand-color, 2%);
+    }
+}
+
+.btn-danger{
+    background: -webkit-linear-gradient(#fe1029, #e2011a);
+    background: linear-gradient(#fe1029, #e2011a);
+    border-color: #ce0016;
+    padding: 10px 25px;
+}
+
+.btn-secondary {
+    @extend .btn-primary;
+    color: $brand-color;
+    background: white;
+    &:hover {
+        color: white;
+    }
+}
+
+.btn-default {
+    background: none;
+    border-color: white;
+    color: white;
+    padding: 1.3rem 5rem;
+    &:hover {
+        background: white;
+        color: $brand-color;
+    }
+}
+
+.btn-warning {
+    background: $button-color-warning;
+    font-size: 1.3rem !important;
+}

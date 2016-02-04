@@ -1,0 +1,206 @@
+.steps-icon-cont{
+    position:relative;
+    .steps{
+        width:118px;
+        position:relative;
+        margin:0 auto 30px;
+        .selected{
+            color:#f33d13;
+        }
+        .icon{
+            &:before{
+                width:118px;
+                height:118px;
+                margin:0 0 10px 0;
+                border:1px solid #dbe9f1;
+                content:"";
+                display:block;
+                background:#eef9ff;
+                -moz-border-radius:100%;
+                -webkit-border-radius:100%;
+                border-radius:100%;
+            }
+            &:after{
+                width:55px;
+                height:58px;
+                position:absolute;
+                top:29px;
+                left:31px;
+                content:"";
+                display:block;
+            }
+        }
+        .number{
+            &:before{
+                width:25px;
+                height:25px;
+                content:"";
+                display:block;
+                position:absolute;
+                top:10px;
+                left:0;
+                background:#35ace0;
+                -moz-border-radius:100%;
+                -webkit-border-radius:100%;
+                border-radius:100%;
+            }
+            &:after{
+                content:"";
+                position:absolute;
+                top:14px;
+                left:8px;
+                font-size:12px;
+                color:#fff;
+            }
+        }
+        .arrow{
+            &:before{
+                width:118px;
+                height:81px;
+                content:"";
+                position:absolute;
+                top:25px;
+                right:-108px;
+                background:url(../images/front/stepsArrow.png) no-repeat bottom right transparent;
+            }
+        }
+
+    }
+}
+
+.selected1{
+    .arrow{
+        &:before{
+            background:url(../images/front/stepsArrow-select.png) no-repeat bottom right transparent !important;
+        }
+    }
+    .icon{
+        &:before{
+            background:#f33d13 !important;
+        }
+        &:after{
+            background:url(../images/front/step1S.png) no-repeat center center transparent;
+        }
+    }
+    .number{
+        &:before{
+            background:#ff6440 !important;
+        }
+    }
+}
+
+.selected2{
+    .arrow{
+        &:before{
+            background:url(../images/front/stepsArrow-select.png) no-repeat bottom right transparent !important;
+        }
+    }
+    .icon{
+        &:before{
+            background:#f33d13 !important;
+        }
+        &:after{
+            background:url(../images/front/step2S.png) no-repeat center center transparent !important;
+        }
+    }
+    .number{
+        &:before{
+            background:#ff6440 !important;
+        }
+    }
+}
+
+.selected3{
+    .arrow{
+        &:before{
+            background:url(../images/front/stepsArrow-select.png) no-repeat bottom right transparent !important;
+        }
+    }
+    .icon{
+        &:before{
+            background:#f33d13 !important;
+        }
+        &:after{
+            background:url(../images/front/step3S.png) no-repeat center center transparent !important;
+        }
+    }
+    .number{
+        &:before{
+            background:#ff6440 !important;
+        }
+    }
+}
+
+.selected4{
+    .arrow{
+        &:before{
+            background:url(../images/front/stepsArrow-select.png) no-repeat bottom right transparent !important;
+        }
+    }
+    .icon{
+        &:before{
+            background:#f33d13 !important;
+        }
+        &:after{
+            background:url(../images/front/step4S.png) no-repeat center center transparent !important;
+        }
+    }
+    .number{
+        &:before{
+            background:#ff6440 !important;
+        }
+    }
+}
+
+.step-1{
+    .number{
+        &:after{
+            content:"1" !important;
+        }
+    }
+}
+
+.step-2{
+    .icon{
+        &:after{
+            background:url(../images/front/step2.png) no-repeat center center transparent;
+        }
+    }
+    .number{
+        &:after{
+            content:"2" !important;
+        }
+    }
+}
+
+.step-3{
+    .icon{
+        &:after{
+            background:url(../images/front/step3.png) no-repeat center center transparent;
+        }
+    }
+    .number{
+        &:after{
+            content:"3" !important;
+        }
+    }
+}
+
+.step-4{
+    .icon{
+        &:after{
+            background:url(../images/front/step4.png) no-repeat center center transparent;
+        }
+    }
+    .number{
+        &:after{
+            content:"4" !important;
+        }
+    }
+}
+
+.selected1,.selected2,.selected3,.selected4{
+    span{
+        color: #f33d13;
+    }
+}
