@@ -1,0 +1,36 @@
+.contact, .login, .payment, .registration {
+    .block {
+        background: $bg3;
+        padding: 2rem 5rem;
+        border-radius: 0.8rem;
+        margin-bottom: 2rem;
+        .heading {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.form-control{
+    font-weight: 400;
+	background-color: $gradient-bottom2;
+	padding-top:10px;
+	padding-bottom:10px;
+	border:1px solid #d2d2d2;
+	height:auto;
+	border-radius:3px !important;
+    background-image: linear-gradient(
+        $gradient-top2, $gradient-bottom2);
+}
+
+.contact-sec{
+    .contact-area {
+        padding: 25px;
+    	margin-bottom: 30px;
+    	border: 1px solid #ddd;
+    	border-radius: 10px;
+        label{
+            margin-top: 10px;
+        }
+}
+}
+

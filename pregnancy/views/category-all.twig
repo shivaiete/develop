@@ -1,0 +1,20 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<section class="category">
+	<div class="container">
+    	<div class="category-sec">
+        	<div class="row">
+		{% for categorie in categories %}
+            	<div class="col-md-3 col-sm-3">
+		    <img src="{{ function('get_wp_term_image', categorie.term_id ) }}" alt="" title="" class="img-responsive" />
+                    <a href="{{ function('get_term_link', categorie.term_id, categorie.taxonomy )}}" class="category-heading">{{ categorie.name }}</a>
+                    <p class="text-center">{{ categorie.description | truncate(20, true) }}</p>                    
+                    <button type="button" class="btn category-btn"><a href="{{ function('get_term_link', categorie.term_id, categorie.taxonomy )}}">{{ 'landing.btn.discover'|trans }}</a></button>
+                </div>
+		{% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

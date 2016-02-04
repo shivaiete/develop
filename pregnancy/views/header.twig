@@ -1,0 +1,30 @@
+<section class="header">
+	<div class="container">
+    	<div class="header-sec">
+        	<div class="row">
+            	<div class="col-md-5 col-sm-4">
+                	<a href="/" class="logo">
+                    	<img src="{{ function('get_content_tree','logo_website_content') }}" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="col-md-7 col-sm-8">
+                	<div class="smart-nav">
+                    	<div class="content">			
+                            <div id="menuzord" class="menuzord red">
+                                <a href="javascript:void(0)" class="menuzord-brand">Menu</a>
+                                <ul class="menuzord-menu">
+				{% for item in menu_header.get_items %}
+					<li class="{{ item.classes | join('active') }}">
+						<a href="{{ item.get_link }}">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+				<li><a href="{{ function('home_url','my-account') }}">{{ 'header.account.link'|trans }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+.prices {
+    .row .row {
+        margin: 0 1rem;
+    }
+    .block {
+        &:hover {
+            cursor: pointer;
+        }
+        outline: 1px solid $border2;
+        margin: 0;
+        padding: 0 0 2rem;
+        li {
+            list-style-type: none;
+            width: 90%;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            &.name {
+                background: $bg1;
+                color: white;
+                text-align: left;
+                margin: 0 0 2rem;
+                padding: 2rem;
+                width: 70%;
+                font-size: 1.6rem;
+            }
+            &.sub-text {
+                font-size: 1.1rem;
+                padding: 1rem 1.1rem;
+                color: $text-color6;
+            }
+            &.price {
+                font-size: 5rem;
+                font-weight: 700;
+                margin: 0.8rem auto;
+            }
+            &.text {
+                display: none;
+                // Mock up does not have this block
+            }
+        }
+    }
+}
+

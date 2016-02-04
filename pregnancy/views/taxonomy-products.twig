@@ -1,0 +1,24 @@
+{% extends "layout.twig" %}
+{% set preFooter = true %}
+
+{% block content %}
+<section class="products">
+	<div class="container">
+    	<div class="products-sec">
+        	<div class="row">
+		{% for product in products %}
+            	<div class="col-md-3 col-sm-3">
+                	<div class="smart-products">
+			<img src="{{ product.thumbnail.src }}" class="img-responsive">
+                        <div class="product-title">{{ product.post_title }}</div>
+                        <p class="text-center">{{ product.post_content | truncate(100, true) }}</p>
+                        <button type="button" class="btn btn-products"><a href="{{ function('home_url','tarif')}}" class="btn-anim1 btn--category-full">{{ 'product.btn.content'|trans }}</a></button>
+                    </div>
+                </div>
+		{% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<section class="payment">
+	<div class="container">
+    	<div class="payment-sec">
+        	<div class="row">
+            	<div class="col-md-10 col-md-offset-1">
+                	<div class="row">
+                    	<div class="col-md-3 border">
+                        	<div class="active payment-round">
+                            	<i class="fa fa-thumbs-up"></i>
+                                <p>{{ 'payment_step.inscription'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 border">
+                        	<div class="active payment-round">
+                            	<i class="fa fa-recycle"></i>
+                                <p>{{ 'payment_step.recap'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 border">
+                        	<div class="active payment-round">
+                            	<i class="fa fa-credit-card"></i>
+                                <p>{{ 'payment_step.payment'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 border">
+                        	<div class="payment-round">
+                            	<i class="fa fa-check"></i>
+                                <p>{{ 'payment_step.confirmation'|trans }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        
+<section class="transaction">
+	<div class="container">
+    	<div class="transaction-sec">
+        	<div class="row">
+            	<div class="col-md-5 col-md-offset-2">
+                	<div class="smart-transaction">
+                    	<div class="transaction-titile">{{ 'form.title.paiement'|trans }}</div>
+						<form id="paymentForm">
+						<div class="form-group">
+							<div class="alert alert-danger" role="alert" style="display:none;"><b>{{ 'form.payment.error'|trans }}</div>
+						</div>
+                        <div class="row">
+                        	<div class="col-md-3 col-sm-3 col-xs-6">
+                            	<select class="form-control">
+									<option value="visa">Visa</option>
+									<option value="visa">Master Card</option>
+									<option value="visa">Carte Bleue</option>
+								</select>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                            <img src="{{ function('bloginfo','url')}}/wp-content/themes/macro-theme1/images/front/paiement2.png" />
+                            </div>
+                        </div>
+                        
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">{{ 'form.label.cardholder'|trans }}</label>
+                            <input class="form-control" id="registration_name_card" name="nameCb" type="text" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">{{ 'form.label.cardnumber'|trans }}</label>
+                            <div class="row">
+                            	<div class="col-md-3">
+                                	<input class="form-control" id="registration_cartnumber1" maxLength="4" type="text" required>
+                                </div>
+                                <div class="col-md-3">
+                                	 <input class="form-control" id="registration_cartnumber2" maxLength="4" type="text" required>
+                                </div>
+                                <div class="col-md-3">
+                                	<input class="form-control" id="registration_cartnumber3" maxLength="4" type="text" required>
+                                </div>
+                                <div class="col-md-3">
+                                	<input class="form-control" id="registration_cartnumber4" maxLength="4" type="text" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleInputEmail1">{{ 'form.label.end_validity_date'|trans }}</label>
+                            <div class="row">
+                            	<div class="col-md-4">
+                                	<select class="form-control" id="registration_card_date_month">
+                                    {% for i in  1..12 %}
+                                            <option value="{{ "%02d"|format(i) }}">{{ "%02d"|format(i) }}</option>
+                                        </option>
+                                    {% endfor %}
+									</select>
+                                </div>
+                                <div class="col-md-4">
+                                	<select class="form-control" id="registration_card_date_year">
+										{% for i in "now"|date("Y").."now"|date("Y")+10 %}
+											<option value="{{ i }}">
+												{{ i }}
+											</option>
+										{% endfor %}
+									</select>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">{{ 'form.label.security_code'|trans }}</label>
+                            <div class="row">
+                            	<div class="col-md-3">
+                                	<input class="form-control" id="registration_cvc" type="text" maxLength="3" required>
+                                </div>
+                            </div>                            
+                          </div>
+                          </div>                 
+						  <button type="submit" class="btn btn-contact">{{ 'form.btn.validate'|trans }}</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                	<div class="timing">
+                    	<img src="{{ function('bloginfo','url')}}/wp-content/themes/pregnancy/images/front/payment.jpg" alt="" title="" class="img-responsive" />
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
+                        <p>The industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type scrambled </p>
+                        <p>it to make a type specimen book. </p>
+                    </div>
+                    <div class="mail">
+                    	<p>Contact@www.com<br>Phone number +33 (0) 1 82 50 76</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var ajax_url             = "{{ function('admin_url','admin-ajax.php') }}";
+        var confirmation_page_id = "{{ function('get_content_tree','payment_confirmation_page') }}";
+        var confirmation_page    = "{{ function('home_url','137') }}";
+        getElementPrice();
+    </script>
+{% endblock javascript %}

@@ -1,0 +1,119 @@
+header:
+    account:
+        link: 'My account'
+landing:
+    btn:
+        slider: 'Order'
+        discover: 'Discover'
+    title:
+        category: 'Categories'
+    customer:
+        feedback: 'Customers feedbacks'
+product:
+    title:
+        content: 'Products'
+    btn:
+        content: 'Order'
+form:
+    title:
+        registration: 'Registration'
+        summary: 'Summary'
+        paiement: 'Payment'
+    label:
+        surname: 'Surname'
+        firstname: 'Firstname'
+        email: 'E-mail address'
+        password: 'Password'
+        pwd_confirmation: 'Password confirmation'
+        cardholder: 'Cardholder'
+        cardnumber: 'Card number'
+        end_validity_date: 'End of validity date'
+        security_code: 'Security code'
+    extra:
+        city: 'City'
+        postcode: 'Postcode'
+        phone: 'Phone'
+        nationality: 'Nationality'
+        email_confirmation: 'Email confirmation'
+    btn:
+        validate: 'Validate'
+        password_reset: 'Password Reset'
+    message:
+        error1: 'Please verify the information you typed'
+    checkbox:
+        text: 'I have read and accepted the Terms and Conditions of Service'
+        text1: 'I have read and accepted the '
+        text2: 'Terms and Conditions of Service'
+    payment:
+        title1: 'Your summary'
+        title2: 'Offer'
+        title3: 'Total amount'
+        title4: 'Please verify the information you typed'
+        error: "Error, your payment doesn't passed"
+    validation:
+        illegal_access: 'You are trying to perform an illegal action.'
+        account_exists: 'It seems that you already have an account. Please consider to <a href="%s">login</a> instead of creating a new account.'
+        email_required: 'Your email address it is a required field. Please enter a valid email address to continue.'
+prices:
+    title:
+        content: 'PRICES'
+login:
+    title:
+       content: 'REGISTER'
+    title2:
+        content: 'Fill in the fields'
+    error:
+        content: 'Error, Please verify the information you typed.'
+    label:
+        login: 'Enter your username'
+        password: 'Enter your password'
+        remember: 'Remember me'
+password_reset:
+    title:
+        content: 'PASSWORD RESET'
+        set: 'Set Password'
+    placeholder:
+        username: 'Enter your username / email address'
+        password: 'Enter a new password'
+        validate: 'Validate your password'
+    btn:
+        reset: 'Reset'
+        set: 'Set new password'
+    error:
+        user_not_exists: 'The given user does not exists'
+    validate:
+        pass_not_match:  'The passwords do not match.'
+contact:
+    label:
+        subject: 'Subject'
+    title1:
+        content: 'CONTACT US'
+    title2:
+        content: 'Your information'
+    title3:
+        content: 'Your message'
+    btn:
+        content: 'Send us'
+registration:
+    step:
+        content: 'STEP 1'
+    title:
+        content: 'Enter your informations'
+    error:
+        content: 'Error, passwords are different'
+recap:
+    step:
+        content: 'STEP 2'
+payment:
+    step:
+        content: 'STEP 3'
+dashboard:
+    heading: 'Dashboard'
+    lesson_categories: 'Available Categories'
+    low_balance: 'You have low balance. Please add some extra credits in your account to continue with this download.'
+    available_credits: 'Available Credits'
+payment_step:
+    inscription: 'Inscription'
+    recap: 'Recap'
+    payment: 'Payment'
+    confirmation: 'Confirmation'

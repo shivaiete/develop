@@ -1,0 +1,245 @@
+html, body {
+    background: $bg2;
+    font-family: $font-family1;
+	color:$text-color8;
+}
+
+.banner{
+    min-height:479px;
+    .banner-text{
+        width:522px; 
+    	height:441px;
+		background:url(../images/front/bannerbg.png) center top no-repeat;
+	    h2{
+            font-size:33px; 
+		    color:#fff; 
+		    font-weight:bold;
+		}
+
+	    p{
+            color:#fff;
+        }
+
+	    .text-padding{
+            padding:16% 16% 10% 15%;
+            .btn{
+			    border:1px solid #fff; 
+			    padding:8px 20px; 
+			    color:#fff;
+				background:none;
+			}
+        }
+    }   
+}
+.categories-sec{
+    .categories-heading{
+	    font-size:22px;
+		color:$text-color7;
+	}
+}
+.services{
+    background: #f0f0f0;
+    padding: 30px 0px;
+    .services-sec{
+        .col-md-3{
+            img{
+    	        margin-left: auto;
+    			margin-right: auto;
+    			display: block;
+    			border: 2px solid #e2e2e2;
+    			padding:6px;
+        	}
+		    .services-title{
+    			font-size: 14px;
+    			font-weight: 600;
+    			text-transform: uppercase;
+    			text-align: center;
+    			display: block;
+    			color: #333;
+    			margin: 10px 0px;
+		    }
+	    }
+		.services-heading{
+		    font-size:40px;
+			color:$text-color9;
+		}
+		
+		
+    }
+}
+.heading1{
+    font-size:22px;
+	font-weight:400;
+	padding-bottom:30px;
+	padding-top:30px;
+    color:$text-color9;
+}
+.about{
+    padding-top: 25px; 
+    padding-bottom: 25px;
+	.about-heading{
+	    font-size:40px;
+		color:$text-color9;
+		margin-bottom:30px;
+	}
+}
+.images-sec{
+    .smart-btn{
+        background: #e9051e;
+        position: absolute;
+        z-index: 9;
+        left: 34%;
+        top: 40%;
+        color: #fff;
+        border: 1px solid rgba(233, 5, 30, 0.96);
+    	
+
+    }
+}
+.smart-nav{
+	.menuzord {
+		width: 100%;
+		padding: 0 0px;
+		float: left;
+		position: relative;
+			
+		.menuzord-right{
+		    float: right;
+		}
+    }
+	.menuzord-menu{
+	    >li{
+		    display: inline-block;
+            float: left;
+		} 
+	} 
+		 
+}
+.products-sec{
+    .smart-products{
+        text-align: center;
+        margin-bottom: 20px;
+	    img{
+            width:100%; 
+    	    height:auto;
+    	}
+	   a{
+            color:#ffffff;
+        }
+	        &:hover{
+                color:#ff0000;
+            }
+	    }
+    }
+.menuzord.red .menuzord-menu ul.dropdown li:hover>a, .menuzord.red .menuzord-menu>li.active>a, .menuzord.red .menuzord-menu>li:hover>a {
+    color: #fff;
+    background: #ed1e79;
+}
+.information{
+    background: $bg3; 
+    padding: 40px 0px;
+	.information-header{
+		font-weight: 600;
+		font-size: 18px;
+	    margin: 20px 0px;
+	}
+	label{
+	    margin-top: 12px;
+	}
+}	
+
+.personal-sec{
+	.smart-personal {
+		background: #f1f1f1;
+		padding: 20px;
+		border-radius: 7px;
+	}
+}
+.header{background: $bg3;}
+.products{
+    padding-top:70px; 
+    padding-bottom:70px}
+ .footer {
+    background: $bg1;
+    a {
+        color: $link-color1;
+    }
+    .nav {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 700;
+        a:hover, a:focus {
+            color: $brand-color;
+            background: none;
+        }
+    }
+}
+
+.content.container {
+    > .row {
+        background: white;
+        margin-top: 1rem;
+        padding: 2rem 0;
+        .heading-container .heading {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.timing{
+   p{padding-top:6px; 
+     font-weight:400;
+   }
+}
+
+.header {
+    min-height: 5rem;
+    padding: 2rem 0;
+    text-align: center;
+    .nav {
+        visibility: hidden;
+        display: inline-block;
+        font-size: 1.4rem;
+        padding-top: 4rem;
+        .logo {
+            margin-top: -4rem;
+        }
+    }
+}
+
+.footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.footer .nav {
+    li {
+        margin-top: 1rem;
+        border-left: 1px solid $text-color5;
+        &:first-child {
+            border: none;
+            a {
+                padding-left: 0;
+            }
+        }
+    }
+    a {
+        padding: 0.05rem 2rem;
+        color: $text-color5;
+    }
+}
+
+.footer .pull-right {
+    text-align: right;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    padding-top: 0.8rem;
+
+}
+

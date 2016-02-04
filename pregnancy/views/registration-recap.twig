@@ -1,0 +1,82 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<section class="payment">
+	<div class="container">
+    	<div class="payment-sec">
+        	<div class="row">
+            	<div class="col-md-10 col-md-offset-1">
+                	<div class="row">
+                    	<div class="col-md-3 border">
+                        	<div class="active payment-round">
+                            	<i class="fa fa-thumbs-up"></i>
+                                <p>{{ 'payment_step.inscription'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 border">
+                        	<div class="active payment-round">
+                            	<i class="fa fa-recycle"></i>
+                                <p>{{ 'payment_step.recap'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 border">
+                        	<div class="payment-round">
+                            	<i class="fa fa-credit-card"></i>
+                                <p>{{ 'payment_step.payment'|trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 border">
+                        	<div class="payment-round">
+                            	<i class="fa fa-check"></i>
+                                <p>{{ 'payment_step.confirmation'|trans }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="personal">
+	<div class="container">
+    	<div class="personal-sec">
+        	<div class="row">
+            	<div class="col-md-6 col-md-offset-3">
+				<form id="recapForm">
+                	<div class="smart-personal">
+                    	<div class="row">
+                        	<div class="col-md-6">
+                            	<p><b>{{ 'registration.title.content'|trans }}</b></p>
+                            </div>
+                            <div class="col-md-6">
+                            	<button type="button" class="btn pull-right btn-back" onclick="javascript:window.history.back();">Back to information</button>
+                            </div>
+                        </div>
+                    	
+						
+                    	<p>{{ 'form.label.surname'|trans }} : <span class="lastnameRecap"></span></p>
+                        <p>{{ 'form.label.firstname'|trans }} : <span class="firstnameRecap"></span></p>
+                        <p>{{ 'form.extra.phone'|trans }} : <span class="phoneRecap"></span></p>
+                        <p>{{ 'form.extra.city'|trans }} : <span class="cityRecap"></span></p>
+                        <p>{{ 'form.extra.postcode'|trans }} : <span class="postcodeRecap"></span></p>
+                        <p>{{ 'form.extra.nationality'|trans }} : <span class="nationalityRecap"></span></p>
+                        <p>{{ 'form.label.email'|trans }} : <span class="mailRecap"></span></p>
+                        <p><input type="checkbox" required> {{ 'form.checkbox.text1'|trans }} <a href="{{ function('home_url','cgv')}}">{{ 'form.checkbox.text2'|trans }}</a></p>
+						<button type="submit" class="btn btn-contact">{{ 'form.btn.validate'|trans }}</button>
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var ajax_url     = "{{ function('admin_url','admin-ajax.php') }}";
+        var payment_page = "{{ function('home_url','payment') }}";
+        getElementCustomer();
+    </script>
+{% endblock javascript %}

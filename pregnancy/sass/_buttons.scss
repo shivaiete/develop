@@ -1,0 +1,37 @@
+.btn{
+	border-style:solid;
+	border-color:#ce0016;
+    border-width:1px;
+    color: #ffffff;
+    margin-top: 20px;
+	padding:10px 20px;
+	text-transform:uppercase;
+	background-color: $gradient-bottom;
+    background-image: linear-gradient(
+        $gradient-top, $gradient-bottom);
+	&:hover{
+	    background:#fc0f29; 
+		}
+	a{
+	    color:#ffffff;
+	 }	
+}
+
+.btn-primary {
+    text-transform: uppercase;
+    border-radius: 0.3rem;
+    padding: 1.3rem 5rem;
+    border-color: $button-border;
+    background-color: $gradient-bottom;
+    background-image: linear-gradient(
+        $gradient-top, $gradient-bottom);
+    &:hover {
+        border-color: darken($button-border, 5%);
+        background-color: darken($gradient-bottom, 5%);
+        background-image: linear-gradient(
+            $gradient-top-hover, $gradient-bottom-hover);
+    }
+}
+
+
+

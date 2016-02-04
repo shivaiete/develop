@@ -1,0 +1,125 @@
+.carousel {
+    .carousel-caption {
+        position: absolute;
+        left: 10%;
+        top: 2%;
+        width: 30%;
+        text-align: left;
+    }
+    .title, .content {
+        background: $bg1;
+        padding: 1.5rem;
+    }
+    .title {
+        display: inline-block;
+        margin: 0;
+        text-transform: uppercase;
+        width: 95%;
+    }
+    .content {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $text-color3;
+    }
+    .carousel-indicators {
+        padding: 1rem 0;
+        background: rgba(255,255,255,0.2);
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        li {
+            background: $bg1;
+            border-color: $bg1;
+            &.active {
+                background: white;
+                border-color: white;
+            }
+        }
+    }
+}
+.carousel-inner{
+    .item{
+        img{
+		    width:100%;
+			height:auto;
+		}
+		
+	}
+}
+.categories {
+    background: white;
+    padding: 2rem;
+    li {
+        margin-top: 0 !important;
+        a {
+            //display: block;
+            position: relative;
+            padding: 0;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        span {
+            background: $bg2;
+            text-transform: uppercase;
+            padding: 2rem;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: white;
+            letter-spacing: 0.05rem;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .tab-content {
+        padding: 7rem;
+        .name {
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .description {
+            color: $text-color1;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.posts {
+    border: 1px solid $border1;
+    padding: 2rem 0rem;
+    .name {
+        color: $text-color2;
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+    .content {
+        color: $text-color1;
+    }
+}
+
+.benefits {
+    border: 1px solid $border1;
+    padding: 2rem 0rem;
+    ul {
+        text-align: center;
+        padding: 0;
+    }
+    li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 2rem;
+        width: 25%;
+    }
+    .text {
+        color: $text-color9;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.5rem;
+        width: 80%;
+        text-align: center;
+        margin: 0.9rem auto;
+    }
+}
+

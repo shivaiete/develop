@@ -1,0 +1,85 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<section class="account">
+	<div class="container">
+    	<div class="account-sec">
+        	<div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <h1 class="account-heading">{{ 'dashboard.heading'|trans }}</h1>
+                    <div class="smart-account">
+                        <h2 class="sub-title">Please, upload tutorials you need.</h2>
+                        <div class="row">
+						{% for category in categories %}
+							{% set category_lessons = attribute(lessons, category.slug) %}
+							{% set closed = true %}
+							{% for post in category_lessons %}
+								{% if loop.index == 1 %}
+								{% set closed = false %}
+								<div class="col-md-3 col-sm-3">
+								{% endif %}
+                            
+                                <div class="smart-account-title">{{ category.name }}</div>
+                                
+								<div class="account-img-sec">
+                                    <img src="{{ post.post_thumbnail }}" alt="" title="" class="img-responsive" />
+									<h4>{{ post.title }}</h4>
+									<small>{{ post.description }}</small>
+									{% set link = post.file ~ ':-:' ~ function( 'get_current_user_id' ) ~ ':-:' ~ post.credits %}
+									{% set data = function( 'crypt_set_data', link ) %}
+									<br />
+									<hr />
+									<span class="download_lesson btn-anim1 btn--category-full" data-lesson="{{ function( 'encrypt' ) }}">
+										Download
+									</span>
+									<span class="pull-right">
+										{{ post.credits }} Credits
+									</span>
+									<br />
+									<br />
+                                </div>
+								{% if loop.index is divisible by(3) %}
+							</div>
+						{% endif %}
+						{% endfor %}
+						{% if closed == false %}
+							</div>
+						{% endif %}
+					{% endfor %}
+                           
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="account-right-sec">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-credit">{{ 'dashboard.consumed_credits'|trans }}:{{ user_history.consumed_credits }}<br>{{ 'dashboard.available_credits'|trans }}:{{ user_history.available_credits }}</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-topup">Top-up<br>your creadits</button>
+                            </div>
+                        </div>
+                        <div class="timing">
+			    <div class="smart-account-title">{{ 'dashboard.lesson_categories'|trans }}</div>
+				<ul>
+					{% for category in categories %}
+					<li>
+						<a href="{{ category_url ~ category.slug }}">
+							{{ category.name }}
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+                        </div>
+                        <div class="mail">
+                            <p>Contact@www.com<br>Phone number +33 (0) 1 82 50 76</p>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

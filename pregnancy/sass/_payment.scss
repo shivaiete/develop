@@ -1,0 +1,85 @@
+.payment-sec{
+    padding-top:40px;
+    padding-bottom:40px;
+	.border-doted{
+	    border-style:dashed;
+		border-width:1px;
+		border-color:$dot-color;
+		border-radius: 100%;
+		width: 155px;
+		padding: 7px;
+		height: 155px;
+	  }
+	  .top-arrow{
+		width: 155px;
+		padding: 7px;
+		height: 155px;
+		position:relative;
+		&:after{
+		    content:'';
+		    width:51px;
+			height:17px;
+			position:absolute;
+			left:160px;
+			top:30px;
+			background:url('../images/front/bottom-arrow.png') no-repeat;
+			}
+	  
+}
+	.payment-round {
+	    width: 140px;
+		padding: 20px;
+		height: 140px;
+		border: 1px solid #ddd;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 32px;
+		background: #fff;
+		color: #ED217C;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		margin-bottom: 10px;
+		.fa{
+	        font-size: 50px;
+		}
+    }
+	
+	.active{
+	    background: #ed217c;
+		color: #fff;
+	}
+}
+	
+/*old*/
+#payment {
+    .row {
+        margin: 0;
+        background: white;
+    }
+    .heading {
+        margin-bottom: 1rem;
+    }
+    .block {
+        background: none;
+    }
+    .summary.row {
+        padding: 0;
+        .heading {
+            font-size: 1.6rem;
+            margin-bottom: 2.5rem;
+        }
+        .text {
+            font-weight: 700;
+        }
+    }
+    .form.block {
+        background: $bg3;
+        .row {
+            background: none;
+        }
+    }
+    .loader {
+        display: none;
+    }
+}

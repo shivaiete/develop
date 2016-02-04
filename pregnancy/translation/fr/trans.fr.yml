@@ -1,0 +1,112 @@
+header:
+    account:
+        link: 'Mon compte'
+landing:
+    btn:
+        slider: 'COMMANDER'
+        discover: 'En savoir plus'
+    title:
+        category: 'Catégories'
+    customer:
+        feedback: 'Ils nous on fait confiance'
+    benefits:
+        text1: 'SAV assuré 7j/7 24h/24'
+        text2: 'Sans engagement'
+        text3: 'Données sécurisées'
+product:
+    title:
+        content: 'Produits'
+    btn:
+        content: 'Commander'
+form:
+    title:
+        registration: 'Inscription'
+        summary: 'Récapitulatif'
+        paiement: 'Paiement'
+    label:
+        surname: 'Nom'
+        firstname: 'Prénom'
+        email: 'Adresse e-mail'
+        password: 'Mot de passe'
+        pwd_confirmation: 'Entrez à nouveau votre mot de passe'
+        cardholder: 'Titulaire de la carte'
+        cardnumber: 'Numéro carte'
+        end_validity_date: 'Date de validité'
+        security_code: 'Cryptogramme'
+    btn:
+        validate: 'Valider'
+        password_reset: 'Password Reset'
+    message:
+        error1: 'Veuillez vérifier vos informations'
+    checkbox:
+        text: 'J’ai lu et j’accepte les C.G.V'
+        text1: 'J’ai lu et j’accepte les '
+        text2: 'Conditions Générales de Ventes'
+    payment:
+        title1: 'Récapitulatif de votre commande'
+        title2: 'Type de l’offre'
+        title3: 'Total à régler'
+        tittle4: 'Veuillez compléter les champs ci-dessous'
+        error: "Erreur, votre paiement n'est pas passé."
+    validation:
+        illegal_access: 'You are trying to perform an illegal action.'
+        account_exists: 'It seems that you already have an account. Please consider to <a href="%s">login</a> instead of creating a new account.'
+        email_required: 'Your email address it is a required field. Please enter a valid email address to continue.'
+prices:
+    title:
+        content: 'NOS TARIFS'
+login:
+    title:
+       content: 'SE CONNECTER'
+    title2:
+        content: 'Entrez vos identifiants'
+    error:
+        content: 'Erreur, votre identifiant et mot de passe ne sont pas bon.'
+    label:
+        login: 'Identifiant'
+        password: 'Mot de passe'
+        remember: 'Remember me'
+password_reset:
+    title:
+        content: 'PASSWORD RESET'
+        set: 'Set Password'
+    placeholder:
+        username: 'Enter your username / email address'
+        password: 'Enter a new password'
+        validate: 'Validate your password'
+    btn:
+        reset: 'Reset'
+        set: 'Set new password'
+    error:
+        user_not_exists: 'The given user does not exists'
+    validate:
+        pass_not_match:  'The passwords do not match.'
+contact:
+    label:
+        subject: 'Objet'
+    title1:
+        content: 'NOUS CONTACTER'
+    title2:
+        content: 'Vos informations'
+    title3:
+        content: 'Votre message'
+    btn:
+        content: 'Envoyer'
+registration:
+    step:
+        content: 'ETAPE 1'
+    title:
+        content: 'Entrez vos informations'
+    error:
+        content: 'Erreur, les mots de passes sont différent'
+recap:
+    step:
+        content: 'ETAPE 2'
+payment:
+    step:
+        content: 'ETAPE 3'
+dashboard:
+    heading: 'Dashboard'
+    lesson_categories: 'Available Categories'
+    low_balance: 'You have low balance. Please add some extra credits in your account to continue with this download.'
+    available_credits: 'Available Credits'

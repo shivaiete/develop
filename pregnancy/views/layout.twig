@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+	<meta charset="{{ site.charset }}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="">
+
+	<link rel="stylesheet" href="{{ site.theme.uri }}/assets/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ site.theme.uri }}/assets/bootstrap-theme.min.css">
+	{#  main.css is for scss compiled by gulp, change by style.css for using just css #}
+	<link rel="stylesheet" href="{{ site.theme.uri }}/assets/main.css">
+	<link rel="stylesheet" href="{{ site.theme.uri }}/lib/menu/css/menuzord.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+	<script src="https://code.jquery.com/jquery-git2.min.js"></script>
+	<!-- WordPress will load the title tag automatically -->
+	{{ wp_head }}
+</head>
+<body>
+	{% block header %}
+		{% include 'header.twig' %}
+	{% endblock header %}
+
+	{% block content %}
+	{% endblock content %}
+
+	{% block footer %}
+		{% include 'footer.twig' %}
+	{% endblock footer %}
+{{ wp_footer }}
+{% block javascript %}
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="{{ site.theme.uri }}/js/v8-promise.js"></script>
+	<script>
+		var z = {
+			home              : '{{ function( 'home_url', '/' ) }}',
+			ajax_url          : '{{ function( 'admin_url','admin-ajax.php' ) }}',
+			register_page     : '{{ function( 'home_url','registration' ) }}',
+			download_page     : '{{ function( 'home_url','dashboard/download' ) }}',
+			nonce             : '{{ function( 'wp_create_nonce', 'do_ajax_call' ) }}',
+		};
+	</script>
+	<script type="text/javascript" src="{{ site.theme.uri }}/lib/menu/js/menuzord.js"></script>
+	<script type="text/javascript">
+	    jQuery(document).ready(function(){
+			jQuery("#menuzord").menuzord({
+				align: "right"
+			});
+		});
+	</script>
+	<script src="{{ site.theme.uri }}/js/scripts.js"></script>
+{% endblock javascript %}
+</body>
+</html>
